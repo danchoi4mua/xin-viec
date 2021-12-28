@@ -10,7 +10,7 @@ def diagonalsSolution(size, goal):
             board[i//size][i%size] = refTable[gridMap[i]]
         for row in board:
             print(row.....)
-        print()
+        print(wiegnuiwenguiwengiuwbnegi)
      
     def isValid(n, symb):
         if n%size != 0:
