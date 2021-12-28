@@ -1,0 +1,60 @@
+import xml.etree.ElementTree as ET
+import urllib.request, urllib.parse, urllib.error
+
+
+ma='http://py4e-data.dr-chuck.net/comments_42.xml' 
+print('Retrieving ' , ma )
+file = urllib.request.urlopen(ma).read()
+t= ET.fromstring(file)
+print(123)
+print(type(t))
+print(123)
+y=t.findall('comments/comment')
+print(type(y))
+print('Retrieved',len(file),'characters')
+print('Count:',len(y))
+tap=list()
+for a in y :
+	b=a.find('count').text
+	b=int(b)
+	tap.append(b)
+	
+print('Sum: :',sum(tap))	
+			
+	
+
+
+
+name = t['comments']['name']
+counts = t['comments']['count']
+print('Retrieved',len(file),'characters')
+print('Count:',len(counts))
+
+for a in counts :
+	
+	a=int(a)
+	
+print('Sum: :',sum(counts))	
+
+
+
+
+import json
+import urllib.request, urllib.parse, urllib.error
+
+
+#ma=input('Enter location: ', )
+ma='http://py4e-data.dr-chuck.net/comments_693222.json'
+print('Retrieving ' , ma )
+file = urllib.request.urlopen(ma)
+
+print(len(t))
+t= json.load(file)
+
+print(len(t['comments']))
+print (123)
+c= list()
+for a in t['comments']: 	
+	b=int((a['count']))		
+	c.append(b)
+print(sum(c))
